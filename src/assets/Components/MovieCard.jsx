@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 export default function MovieCard(props) {
   const movie = props.movie;
-  const id = props.id;
+  const i = props.id;
   const remove = props.remove;
 
   return (
@@ -29,7 +29,10 @@ export default function MovieCard(props) {
       >
         <RemoveIcon />
       </Fab>
-      <CardActionArea component={Link} to={'/Movies/' + movie.name.replaceAll(' ', '-')}>
+      <CardActionArea
+        component={Link}
+        to={'/Movies/' + movie.name.replaceAll(' ', '-') + '-' + i}
+      >
         <CardMedia component='img' height='175' image={movie.image} />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>

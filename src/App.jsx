@@ -104,17 +104,30 @@ function App() {
           <Route path='About' element={<About />} />
           <Route path='Movies'>
             {movies.map((movie, i) => (
-              <Route
-                path={movie.name.replaceAll(' ', '-')}
-                element={
-                  <MoviePage
-                    i={i}
-                    movies={movies}
-                    updateMovies={updateMovies}
-                    removeMovie={removeMovie}
-                  />
-                }
-              />
+              <Route path={movie.name.replaceAll(' ', '-')+ '-' + i}>
+                <Route
+                  index
+                  element={
+                    <MoviePage
+                      i={i}
+                      movies={movies}
+                      updateMovies={updateMovies}
+                      removeMovie={removeMovie}
+                    />
+                  }
+                />
+                <Route
+                  path='Edit'
+                  element={
+                    <MovieEditor
+                      movie={movie}
+                      i={i}
+                      movies={movies}
+                      updateMovies={updateMovies}
+                    />
+                  }
+                />
+              </Route>
             ))}
           </Route>
           <Route path='*' element={<NoPage />} />

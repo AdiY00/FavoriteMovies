@@ -47,6 +47,7 @@ export default function MovieEditor(props) {
           label='Movie Name'
           variant='outlined'
           defaultValue={movie.name}
+          onChange={e => (movie.name = e.target.value)}
         />
         <TextField
           id='release-year'
@@ -54,7 +55,7 @@ export default function MovieEditor(props) {
           variant='outlined'
           type='number'
           defaultValue={movie.release}
-          onChange={(e, newValue) => (movie.release = newValue)}
+          onChange={e => (movie.release = e.target.value)}
         />
         <br />
         <TextField
@@ -62,7 +63,8 @@ export default function MovieEditor(props) {
           label='Image Link'
           variant='outlined'
           style={{ width: 460 }}
-          onChange={(e, newValue) => (movie.image = newValue)}
+          defaultValue={movie.image}
+          onChange={e => (movie.image = e.target.value)}
         />
         <br />
         <TextField
@@ -71,17 +73,17 @@ export default function MovieEditor(props) {
           multiline
           minRows={4}
           style={{ width: 460 }}
-          onChange={(e, newValue) => (movie.summary = newValue)}
+          defaultValue={movie.summary}
+          onChange={e => (movie.summary = e.target.value)}
         />
         <br />
         <Button
           onClick={() => {
             i >= 0 ? (movies[i] = movie) : movies.push(movie);
             updateMovies([...movies]);
-            console.table(movies);
           }}
-          // component={Link}
-          // to={'/'}
+          component={Link}
+          to={i >= 0 ? '/Movies/' + movie.name.replaceAll(' ', '-') + '-' + i : '/'}
           variant='contained'
           style={{ width: 460 }}
         >

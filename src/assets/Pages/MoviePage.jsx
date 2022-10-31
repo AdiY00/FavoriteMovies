@@ -2,6 +2,7 @@ import { Divider, Grid, Paper, Rating, Typography } from '@mui/material';
 import { Container, display, flexbox } from '@mui/system';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
+import { Link } from 'react-router-dom';
 
 const MoviePage = props => {
   const { i, movies, updateMovies, removeMovie } = props;
@@ -31,15 +32,7 @@ const MoviePage = props => {
         <Container style={{ maxWidth: 500 }}>
           <h1>{movies[i].name}</h1>
           <h2>{movies[i].release}</h2>
-          <Rating
-            value={movies[i].score}
-            max={10}
-            precision={0.5}
-            onChange={(e, newValue) => {
-              movies[i].score = newValue;
-              updateMovies([...movies]);
-            }}
-          />
+          <Rating value={movies[i].score} max={10} precision={0.5} readOnly />
           <Divider style={{ marginTop: 7, marginBottom: 10 }} />
           <Typography variant='body2' color='text.secondary' style={{ marginBottom: 10 }}>
             {movies[i].summary}
@@ -51,6 +44,8 @@ const MoviePage = props => {
         />
       </Paper>
       <Fab
+        component={Link}
+        to={'Edit'}
         style={{
           top: 'auto',
           right: '60px',
