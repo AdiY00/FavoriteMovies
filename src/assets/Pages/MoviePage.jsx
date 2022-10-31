@@ -16,6 +16,7 @@ const MoviePage = props => {
         justifyContent: 'center',
         alignContent: 'center',
         height: '90vh',
+        overflow: "hidden"
       }}
     >
       <Paper

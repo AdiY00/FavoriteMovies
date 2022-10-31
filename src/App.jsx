@@ -13,7 +13,7 @@ let Movies = [
   {
     name: 'Fight Club',
     release: 1999,
-    score: 9.5,
+    score: 10,
     summary:
       "A depressed man (Edward Norton) suffering from insomnia meets a strange soap salesman named Tyler Durden (Brad Pitt) and soon finds himself living in his squalid house after his perfect apartment is destroyed. The two bored men form an underground club with strict rules and fight other men who are fed up with their mundane lives. Their perfect partnership frays when Marla (Helena Bonham Carter), a fellow support group crasher, attracts Tyler's attention.",
     image:
@@ -22,7 +22,7 @@ let Movies = [
   {
     name: 'Forest Gump',
     release: 1994,
-    score: 9.5,
+    score: 10,
     summary:
       'Slow-witted Forrest Gump (Tom Hanks) has never thought of himself as disadvantaged, and thanks to his supportive mother (Sally Field), he leads anything but a restricted life. Whether dominating on the gridiron as a college football star, fighting in Vietnam or captaining a shrimp boat, Forrest inspires people with his childlike optimism. But one person Forrest cares about most may be the most difficult to save -- his childhood love, the sweet but troubled Jenny (Robin Wright).',
     image: 'https://i.pinimg.com/originals/26/9d/5f/269d5f464587df6a90f8ab9069396943.jpg',
@@ -30,7 +30,7 @@ let Movies = [
   {
     name: 'The Shawshank Redemption',
     release: 1994,
-    score: 9.5,
+    score: 10,
     summary:
       "Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didn't commit the crimes. While there, he forms a friendship with Red (Morgan Freeman), experiences brutality of prison life, adapts, helps the warden, etc., all in 19 years.",
     image:
@@ -56,7 +56,7 @@ let Movies = [
   {
     name: 'Inception',
     release: 2010,
-    score: 9.5,
+    score: 9,
     summary:
       "Dom Cobb (Leonardo DiCaprio) is a thief with the rare ability to enter people's dreams and steal their secrets from their subconscious. His skill has made him a hot commodity in the world of corporate espionage but has also cost him everything he loves. Cobb gets a chance at redemption when he is offered a seemingly impossible task: Plant an idea in someone's mind. If he succeeds, it will be the perfect crime, but a dangerous enemy anticipates Cobb's every move.",
     image:
@@ -65,7 +65,7 @@ let Movies = [
   {
     name: 'Gladiator',
     release: 2000,
-    score: 9.5,
+    score: 8.5,
     summary:
       'Commodus (Joaquin Phoenix) takes power and strips rank from Maximus (Russell Crowe), one of the favored generals of his predecessor and father, Emperor Marcus Aurelius, the great stoical philosopher. Maximus is then relegated to fighting to the death in the gladiator arenas.',
     image: 'https://ae01.alicdn.com/kf/H7d61158295c34a80a1630e4b1ddd8c9bc.jpg',
