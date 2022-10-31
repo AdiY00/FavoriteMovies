@@ -23,7 +23,7 @@ export default function MovieCard(props) {
         color='secondary'
         aria-label='remove'
         size='small'
-        style={{ position: 'fixed', margin: 3, backgroundColor: '#ef5350' }}
+        style={{ position: 'absolute', margin: 3, backgroundColor: '#ef5350' }}
         className='remove'
         onClick={() => remove()}
       >

@@ -1,12 +1,13 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Home from './assets/Pages/Home';
-import Bar from './assets/Components/Bar';
 import NoPage from './assets/Pages/NoPage';
 import About from './assets/Pages/About';
-import { useState } from 'react';
 import MoviePage from './assets/Pages/MoviePage';
+import Bar from './assets/Components/Bar';
+import MovieEditor from './assets/Components/MovieEditor';
 
 let Movies = [
   {
@@ -92,9 +93,14 @@ function App() {
                 removeMovie={removeMovie}
               />
             }
-          >
-            <Route path='New-Movie'></Route>
-          </Route>
+          />
+
+          <Route
+            path='New-Movie'
+            element={
+              <MovieEditor movie={null} movies={movies} updateMovies={updateMovies} />
+            }
+          />
           <Route path='About' element={<About />} />
           <Route path='Movies'>
             {movies.map((movie, i) => (
