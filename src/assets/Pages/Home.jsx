@@ -10,7 +10,7 @@ const Home = props => {
   return (
     <Container
       maxWidth=''
-      sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}
+      sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: "center"}}
     >
       {movies.map((m, i) => (
         <MovieCard movie={m} id={i} key={i} remove={removeMovie(i)} />

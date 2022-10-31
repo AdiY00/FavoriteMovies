@@ -6,6 +6,7 @@ import Bar from './assets/Components/Bar';
 import NoPage from './assets/Pages/NoPage';
 import About from './assets/Pages/About';
 import { useState } from 'react';
+import MoviePage from './assets/Pages/MoviePage';
 
 let Movies = [
   {
@@ -34,6 +35,40 @@ let Movies = [
     image:
       'https://m.media-amazon.com/images/M/MV5BMTc0NDA0NzU5NF5BMl5BanBnXkFtZTgwNTQ2MjEyMDE@._V1_FMjpg_UX500_.jpg',
   },
+  {
+    name: 'The Silence of The Lambs',
+    release: 1991,
+    score: 9.5,
+    summary:
+      "Jodie Foster stars as Clarice Starling, a top student at the FBI's training academy. Jack Crawford (Scott Glenn) wants Clarice to interview Dr. Hannibal Lecter (Anthony Hopkins), a brilliant psychiatrist who is also a violent psychopath, serving life behind bars for various acts of murder and cannibalism. Crawford believes that Lecter may have insight into a case and that Starling, as an attractive young woman, may be just the bait to draw him out.",
+    image: 'https://cdn.mos.cms.futurecdn.net/aybwG6Kx6thfNAKNjXcxnV.jpg',
+  },
+  {
+    name: 'The Dark Knight',
+    release: 2008,
+    score: 9.5,
+    summary:
+      "With the help of allies Lt. Jim Gordon (Gary Oldman) and DA Harvey Dent (Aaron Eckhart), Batman (Christian Bale) has been able to keep a tight lid on crime in Gotham City. But when a vile young criminal calling himself the Joker (Heath Ledger) suddenly throws the town into chaos, the caped Crusader begins to tread a fine line between heroism and vigilantism.Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didn't commit the crimes. While there, he forms a friendship with Red (Morgan Freeman), experiences brutality of prison life, adapts, helps the warden, etc., all in 19 years.",
+    image:
+      'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg',
+  },
+  {
+    name: 'Inception',
+    release: 2010,
+    score: 9.5,
+    summary:
+      "Dom Cobb (Leonardo DiCaprio) is a thief with the rare ability to enter people's dreams and steal their secrets from their subconscious. His skill has made him a hot commodity in the world of corporate espionage but has also cost him everything he loves. Cobb gets a chance at redemption when he is offered a seemingly impossible task: Plant an idea in someone's mind. If he succeeds, it will be the perfect crime, but a dangerous enemy anticipates Cobb's every move.",
+    image:
+      'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX700_.jpg',
+  },
+  {
+    name: 'Gladiator',
+    release: 2000,
+    score: 9.5,
+    summary:
+      'Commodus (Joaquin Phoenix) takes power and strips rank from Maximus (Russell Crowe), one of the favored generals of his predecessor and father, Emperor Marcus Aurelius, the great stoical philosopher. Maximus is then relegated to fighting to the death in the gladiator arenas.',
+    image: 'https://ae01.alicdn.com/kf/H7d61158295c34a80a1630e4b1ddd8c9bc.jpg',
+  },
 ];
 
 function App() {
@@ -57,11 +92,23 @@ function App() {
                 removeMovie={removeMovie}
               />
             }
-          />
+          >
+            <Route path='New-Movie'></Route>
+          </Route>
           <Route path='About' element={<About />} />
           <Route path='Movies'>
             {movies.map((movie, i) => (
-              <Route path={movie.name.replace(' ', '-')} element={<></>} />
+              <Route
+                path={movie.name.replaceAll(' ', '-')}
+                element={
+                  <MoviePage
+                    i={i}
+                    movies={movies}
+                    updateMovies={updateMovies}
+                    removeMovie={removeMovie}
+                  />
+                }
+              />
             ))}
           </Route>
           <Route path='*' element={<NoPage />} />

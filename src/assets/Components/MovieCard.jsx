@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Fab from '@mui/material/Fab';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { Link } from 'react-router-dom';
 
 export default function MovieCard(props) {
   const movie = props.movie;
@@ -15,8 +16,8 @@ export default function MovieCard(props) {
   return (
     <Card
       sx={{ maxWidth: 345 }}
-      style={{ margin: 20, height: 340, display: 'flex', flexDirection: 'row-reverse' }}
-      className="card"
+      style={{ margin: 20, height: 345, display: 'flex', flexDirection: 'row-reverse' }}
+      className='card'
     >
       <Fab
         color='secondary'
@@ -28,7 +29,7 @@ export default function MovieCard(props) {
       >
         <RemoveIcon />
       </Fab>
-      <CardActionArea>
+      <CardActionArea component={Link} to={'/Movies/' + movie.name.replaceAll(' ', '-')}>
         <CardMedia component='img' height='175' image={movie.image} />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>
